@@ -199,3 +199,96 @@ header dialog ul li a {
     font-weight: 700;
     text-decoration: none;
 }
+
+
+/**************/
+/*  Main      */
+/**************/
+
+main {
+
+    text-align: center;
+}
+
+
+section.intro-text {
+    padding: 0 1.5rem;
+    margin-bottom: 6rem;
+}
+
+section.intro-text h1 {
+    font-size: 2.2rem;
+    color: var(--very-dark-blue);
+    margin-bottom: 1.5rem;
+}
+
+section.intro-text p {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 2.5rem;
+}
+
+section.intro-text button {
+    background-color: var(--bright-red);
+    color: var(--very-pale-red);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: .8rem 2rem;
+    border-radius: 2rem;
+}
+
+
+/* What's different about manage section */
+section.manage {
+    padding: 0 1rem;
+    margin-bottom: 3rem;
+}
+
+section.manage h2{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--very-dark-blue);
+}
+
+section.manage p {
+    color: var(--dark-grayish-blue);
+    margin-bottom: 2.5rem;
+}
+
+/* Features section */
+
+section.features {
+    padding: 0 0 0 1rem;
+    margin-bottom: 3rem;
+    gap: 3rem;
+    text-align: left;
+}
+
+.features .feature .title {
+    margin-bottom: 1.5rem;
+    background-color: var(--very-pale-red);
+    gap: 1rem;
+}
+
+.features .feature .title .number {
+    font-size: 1.2rem;
+    background-color: var(--bright-red);
+    color: var(--very-pale-red);
+    padding: .4rem 1.5rem;
+    border-radius: 40px;
+}
+
+.features .feature .title h3 {
+    font-size: 1rem;
+}
+
+.features .feature p.content {
+    color: var(--dark-grayish-blue);
+}
+
+/* Testimonials section */
+
+section.testimonials h3{
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    color: var(--very-dark-blue);
+}
