@@ -2,7 +2,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -16,30 +16,32 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+    margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-  list-style: none;
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Set core root defaults */
 html:focus-within {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -47,31 +49,101 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-   scroll-behavior: auto;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/********************/
+/*  Utility classes */
+/********************/
+
+.container {
+    max-width: 1110px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.none {
+    display: none;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.relative {
+    position: relative;
+}
 
 /* Set core body defaults */
 body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+
+    font-family: 'Be Vietnam Pro', sans-serif;
 
     /* ## Colors */
 
@@ -86,5 +158,44 @@ body {
     --very-dark-blue: hsl(233, 12%, 13%);
     --very-pale-red: hsl(13, 100%, 96%);
     --vary-light-gray: hsl(0, 0%, 98%);
+}
 
+/**************/
+/*  Header    */
+/**************/
+
+header {
+    padding: 3rem 1.5rem 5rem;
+    background-image: url(/images/bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top -134px right -188px;
+}
+
+.logo-container img {
+    width: 8rem;
+}
+
+header .header-illustration {
+    margin-top: 4rem;
+}
+
+/* Mobile menu */
+
+header dialog {
+    border: none;
+    width: 90%;
+    padding: 1.5rem 0;
+    inset-block-start: -9rem;
+}
+
+header dialog nav ul {
+    gap: 1.8rem;
+}
+
+header dialog ul li a {
+    color: var(--very-dark-blue);
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
 }
