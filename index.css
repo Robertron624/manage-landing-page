@@ -75,6 +75,10 @@ button {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .sr-only {
     position: absolute;
     width: 1px;
@@ -224,6 +228,7 @@ section.intro-text p {
     margin-bottom: 2.5rem;
 }
 
+.desktop-header-btn,
 .get-started,
 section.intro-text button {
     background-color: var(--bright-red);
@@ -253,7 +258,7 @@ section.manage p {
 
 /* Features section */
 
-section.features {
+.features {
     padding: 0 0 0 1rem;
     margin-bottom: 3rem;
     gap: 3rem;
@@ -307,13 +312,13 @@ section.testimonials h3 {
     width: 100%;
 }
 
-.embla:before {
+.embla::before {
     display: none;
     content: '{"slidesToScroll": 1,"draggable": true}';
 }
 
 @media (min-width: 768px) {
-    .embla:before {
+    .embla::before {
         content: '{"slidesToScroll": 2,"draggable": false}';
     }
 }
@@ -454,4 +459,139 @@ footer .links {
 
 .social-media a {
     color: #fff;
+}
+
+/******************/
+/*  Media queries */
+/******************/
+
+.header-links {
+    display: none;
+}
+
+.desktop-header-btn {
+    display: none;
+}
+
+.header-illustration .intro-text {
+    display: none;
+}
+
+@media screen and (min-width: 768px){
+    
+    header {
+        background-size: contain;
+    }
+
+    header .hamburger {
+        display: none;
+    }
+    
+    header .upper {
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+
+    header .upper .logo-container img {
+        width: 10rem;
+    }
+
+    header .upper .header-links {
+        display: flex;
+    }
+
+    header .upper .header-links nav ul{
+        gap: 2rem;
+
+    }
+
+    header .upper .header-links nav ul li a {
+        font-size: .9rem;
+        font-weight: 500;
+        color: var(--very-dark-blue);
+    }
+
+    .desktop-header-btn {
+        display: block;
+    }
+
+    .header-illustration {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+
+    .header-illustration .intro-text {
+        display: block;
+        margin-top: 3rem;
+    }
+
+
+    .header-illustration .intro-text h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        max-width: 70%  ;
+    }
+
+    .header-illustration .intro-text p {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+        color: var(--dark-grayish-blue);
+        max-width: 60%  ;
+    }
+
+    section.intro-text {
+        display: none;
+    }
+
+    section.manage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin-inline: auto;
+        text-align: left;
+        padding: 0;
+    }
+
+    section.manage .texts h2 {
+        max-width: 24rem;
+    }
+
+    section.manage .texts p {
+        max-width: 22rem;
+    }
+
+    section.manage .features {
+        padding: 0;
+    }
+
+    section.manage .features .feature {
+        max-width: 28rem;
+    }
+
+    /* Testimonials section */
+
+    .testimonials h3 {
+        font-size: 2.2rem !important;
+        margin-bottom: 3.5rem !important;
+    }
+
+    .embla__slide {
+        flex: 0 0 33%; /* Will show 3 slides */
+        padding: 2rem 0;
+    }
+
+    .embla__slide .testimonial-container {
+        background-color: var(--vary-light-gray);
+        border-radius: 10px;
+        padding: 3rem 0;
+    }
+
+    .embla__slide .testimonial-container img {
+        position: absolute;
+        top: 0rem;
+        left: 44%;
+    }
+    
 }

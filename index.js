@@ -52,7 +52,7 @@ emblaNode.on("init", () => {
 
 // Get all pagination dots
 
-const dots = document.querySelectorAll(".dot");
+let dots = document.querySelectorAll(".dot");
 
 // _By default, the first dot is active
 let currentDot = dots[0];
@@ -84,3 +84,49 @@ dots.forEach((dot, index) => {
         emblaNode.scrollTo(index);
     });
 });
+
+// Make carousel contain three slides on desktop (768px and above)
+
+const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+const paginationsDots = document.querySelector(".pagination-dots");
+
+function handleTabletChange(e) {
+    // Check if the media query is true to change the number of slides to scroll to 3
+    if (e.matches) {
+        emblaNode.reInit({
+            slidesToScroll: 3,
+        });
+
+        // Remove the third and fourth dot
+        dots[2].remove();
+        dots[3].remove();
+
+    } else {
+        emblaNode.reInit({
+            slidesToScroll: 1,
+        });
+
+        if(paginationsDots.childElementCount === 2) {
+            // Add the third and fourth dot
+            const newDots = `
+                <button class="dot" id="dot-3"></button>
+                <button class="dot" id="dot-4"></button>
+            `;
+
+            // Add the new dots to the DOM and update the dots variable
+
+            paginationsDots.insertAdjacentHTML("beforeend", newDots);
+
+            dots = document.querySelectorAll(".dot");
+        }
+    }
+}
+
+// Register event listener
+
+mediaQuery.addEventListener("change",handleTabletChange);
+
+// Initial check
+
+handleTabletChange(mediaQuery);
