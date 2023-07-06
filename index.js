@@ -136,3 +136,27 @@ mediaQuery.addEventListener("change",handleTabletChange);
 // Initial check
 
 handleTabletChange(mediaQuery);
+
+
+// Form validation
+
+const form = document.querySelector(".inner-bottom form");
+
+const formErrorMsg = document.querySelector("form .error");
+
+const emailInput = document.querySelector("#email");
+
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (!emailRegex.test(emailInput.value)) {
+        formErrorMsg.classList.add("error-active");
+    } else {
+        formErrorMsg.classList.remove("error-active");
+        alert("Thank you for subscribing!");
+        // Reset the form
+        form.reset();
+    }
+});

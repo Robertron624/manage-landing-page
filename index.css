@@ -237,6 +237,14 @@ section.intro-text button {
     font-weight: 700;
     padding: 0.8rem 2rem;
     border-radius: 2rem;
+    transition: all .3s ease-in-out;
+    box-shadow: 3px 3px 9px 0px var(--bright-red);
+}
+
+.desktop-header-btn:hover,
+.get-started:hover,
+section.intro-text button:hover {
+    filter: brightness(1.4);
 }
 
 /* What's different about manage section */
@@ -404,12 +412,30 @@ footer .bottom {
     padding: 2rem 0;
 }
 
+.bottom form {
+    margin-bottom: 3rem;
+}
+
+.bottom form .error {
+    color: var(--bright-red);
+    font-size: .65rem;
+    margin-top: .3rem;
+    text-align: left;
+    font-style: italic;
+    display: none;
+    width: 90%;
+    margin-left: auto;
+}
+
+form .error.error-active {
+    display: block;
+}
+
 .newsletter {
     display: flex;
     gap: .5rem;
     width: 90%;
     margin: 0 auto;
-    margin-bottom: 3rem;
 }
 
 .newsletter input {
@@ -427,6 +453,11 @@ footer .bottom {
     border-radius: 20px;
     border: none;
     width: 25%;
+    transition: all .3s ease-in-out;
+}
+
+.newsletter button:hover {
+    filter: brightness(1.4);
 }
 
 /* Footer links */
@@ -444,10 +475,11 @@ footer .links {
     font-size: .8rem;
     color: var(--dark-grayish-blue);
     text-decoration: none;
+    transition: color .3s ease-in-out;
 }
 
 .links ul li a:hover {
-    color: var(--very-dark-blue);
+    color: var(--bright-red);
 }
 
 /* Social media */
@@ -459,6 +491,11 @@ footer .links {
 
 .social-media a {
     color: #fff;
+    transition: color .3s ease-in-out;
+}
+
+.social-media a:hover {
+    color: var(--bright-red);
 }
 
 p.copyright {
@@ -516,6 +553,11 @@ p.copyright {
         font-size: .9rem;
         font-weight: 500;
         color: var(--very-dark-blue);
+        transition: color .3s ease-in-out;
+    }
+
+    header .upper .header-links nav ul li a:hover {
+        color: var(--dark-grayish-blue);
     }
 
     .desktop-header-btn {
@@ -637,11 +679,19 @@ p.copyright {
         order: 1;
     }
 
-    .bottom .inner-bottom .newsletter {
+    .bottom .inner-bottom form {
         order: 3;
         align-self: flex-start;
         width: 22%;
+    }
+
+    .bottom .inner-bottom .newsletter {
         margin: 0;
+    }
+
+    .bottom form .error {
+        width: 100%;
+        margin-left: 0;
     }
 
     .bottom .inner-bottom .links {
@@ -669,8 +719,6 @@ p.copyright {
     .bottom .inner-bottom .logo-socials .logo {
         justify-content: start;
     }
-
-
 
     p.copyright {
         text-align: right;
