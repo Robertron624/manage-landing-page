@@ -69,20 +69,21 @@ emblaNode.on("pointerUp", function (e) {
     currentDot.classList.add("dot-active");
 });
 
+function dotClickCallback (index) {
+    currentDot.classList.remove("dot-active");
+
+    // Add active class to new dot
+    currentDot = dots[index];
+    currentDot.classList.add("dot-active");
+
+    // Go to the corresponding
+    emblaNode.scrollTo(index);
+};
+
+
 // When clicking on a dot, go to the corresponding slide
 dots.forEach((dot, index) => {
-    dot.addEventListener("click", () => {
-
-        // Remove active class from current dot
-        currentDot.classList.remove("dot-active");
-
-        // Add active class to new dot
-        currentDot = dots[index];
-        currentDot.classList.add("dot-active");
-
-        // Go to the corresponding slide
-        emblaNode.scrollTo(index);
-    });
+    dot.addEventListener("click", dotClickCallback.bind(null, index));
 });
 
 // Make carousel contain three slides on desktop (768px and above)
@@ -119,6 +120,11 @@ function handleTabletChange(e) {
             paginationsDots.insertAdjacentHTML("beforeend", newDots);
 
             dots = document.querySelectorAll(".dot");
+
+            // Add event listeners to the new dots
+
+            dots[2].addEventListener("click", dotClickCallback.bind(null, 2));
+            dots[3].addEventListener("click", dotClickCallback.bind(null, 3));
         }
     }
 }
