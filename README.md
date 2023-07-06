@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 -   Solution URL: [Github repo](https://github.com/Robertron624/manage-landing-page)
--   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+-   Live Site URL: [Netlify URL](https://chic-tiramisu-4ef70d.netlify.app/)
 
 ## My process
 
