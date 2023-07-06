@@ -210,7 +210,25 @@ header dialog ul li a {
 
 main {
     text-align: center;
+    position: relative;
 }
+
+/* Main section background-shape */
+
+.main-background-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    background-image: url(/images/bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40rem;
+    background-position: top 4.5rem right -16rem;
+}
+
+/* Intro section */
 
 section.intro-text {
     padding: 0 1.5rem;
@@ -576,7 +594,6 @@ p.copyright {
         margin-top: 3rem;
     }
 
-
     .header-illustration .intro-text h1 {
         font-size: 3rem;
         margin-bottom: 1.5rem;
@@ -590,6 +607,13 @@ p.copyright {
         max-width: 60%  ;
     }
 
+
+    .main-background-shape {
+        height: 60rem;
+        background-position: bottom -7.5rem left -18rem;
+        background-size: 40rem;
+    }
+
     section.intro-text {
         display: none;
     }
@@ -600,7 +624,7 @@ p.copyright {
         max-width: 1200px;
         margin-inline: auto;
         text-align: left;
-        padding: 0;
+        padding: 0 1.5rem;
     }
 
     section.manage .texts h2 {
@@ -647,7 +671,7 @@ p.copyright {
 
     footer .simplify {
         background-image: url(/images/bg-simplify-section-desktop.svg);
-        padding: 2rem 0;
+        padding: 2rem 1.5rem;
         text-align: left;
     }
 
@@ -686,7 +710,7 @@ p.copyright {
     }
 
     .bottom .inner-bottom .newsletter {
-        margin: 0;
+        margin: 0 0 0 auto;
     }
 
     .bottom form .error {
@@ -699,7 +723,6 @@ p.copyright {
         width: 32%;
     }
 
-    .bottom .inner-bottom .newsletter,
     .bottom .inner-bottom .links,
     .bottom .inner-bottom .logo-socials .social-media {
         margin-bottom: 0;
